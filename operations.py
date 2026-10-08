@@ -28,3 +28,10 @@ import math
 
 def square(x):
     return x * x
+
+import math
+
+def sqrt(x):
+    if x < 0:
+        return "Ошибка"
+    return math.sqrt(x)
