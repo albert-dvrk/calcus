@@ -2,10 +2,10 @@ import math
 
 #надо реализовать
 def add(a, b):
-    """Сложение: a + b."""
     return a + b
 def subtract(a, b):
-    return a - bdef multiply(a, b):print()
+    return a - b
+def multiply(a, b):print()
 def divide(a, b):print()
 def modulo(a, b):print()
 def sin_deg(x):print()
