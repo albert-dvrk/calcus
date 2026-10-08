@@ -1,10 +1,14 @@
 import math
 
 #надо реализовать
-def add(a, b):print()
-def subtract(a, b):print()
-def multiply(a, b):print()
-def divide(a, b):print()
+def add(a, b):
+    return a + b
+def subtract(a, b):
+    return a - b
+def multiply(a, b):
+    return a * b
+def divide(a, b):
+    return a / b
 def modulo(a, b):print()
 def sin_deg(x):print()
 def cos_deg(x):print()
