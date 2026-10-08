@@ -35,3 +35,6 @@ def sqrt(x):
     if x < 0:
         return "Ошибка"
     return math.sqrt(x)
+
+def percent(number, percent_value):
+    return (number * percent_value) / 100
