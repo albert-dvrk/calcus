@@ -5,7 +5,8 @@ def add(a, b):
     return a + b
 def subtract(a, b):
     return a - b
-def multiply(a, b):print()
+def multiply(a, b):
+    return a * b
 def divide(a, b):print()
 def modulo(a, b):print()
 def sin_deg(x):print()
