@@ -1,7 +1,9 @@
 import math
 
 #надо реализовать
-def add(a, b):print()
+def add(a, b):
+    """Сложение: a + b."""
+    return a + b
 def subtract(a, b):print()
 def multiply(a, b):print()
 def divide(a, b):print()
