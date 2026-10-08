@@ -22,3 +22,9 @@ def divide(a, b):
 def square_root(x):print()
 def floor_value(x):print()
 def ceil_value(x):print()
+
+
+import math
+
+def square(x):
+    return x * x
