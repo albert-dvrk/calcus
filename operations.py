@@ -18,7 +18,9 @@ def subtract(a, b):
 def multiply(a, b):
     return a * b
 def divide(a, b):
-    return a / b
+    if b == 0:
+        return None
+    return a // b
 def square_root(x):print()
 def floor_value(x):print()
 def ceil_value(x):print()
