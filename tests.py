@@ -4,6 +4,7 @@ from operations import (
     add, subtract, multiply, divide, modulo, power,
     sin_deg, cos_deg,
 )
+from memory import Memory
 
 class TestAdd(unittest.TestCase):
     def test_positive(self):
@@ -55,7 +56,6 @@ class TestDivide(unittest.TestCase):
     def test_divide_by_zero_returns_none(self):
         self.assertIsNone(divide(10, 0))
 
-
 class TestModulo(unittest.TestCase):
     def test_basic(self):
         self.assertEqual(modulo(10, 3), 1)
@@ -66,9 +66,9 @@ class TestModulo(unittest.TestCase):
     def test_negative_dividend(self):
         self.assertEqual(modulo(-7, 3), 2)
     def test_floats(self):
-        self.assertAlmostEqual(modulo(5.5, 2),
+        self.assertAlmostEqual(modulo(5.5, 2), 1.5)
     def test_modulo_by_zero_returns_none(self):
-        self.assertIsNone(modulo(10, 0)) 1.5)
+        self.assertIsNone(modulo(10, 0))
 
 class TestPower(unittest.TestCase):
     def test_integer(self):
