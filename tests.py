@@ -1,8 +1,8 @@
 import unittest
 
 from operations import (
-    add, subtract, multiply, divide, modulo, power,
-    sin_deg, cos_deg,
+    add, subtract, multiply, divide, mod, power,
+    sin_deg, cos_deg, sqrt, floor_value, ceil_value,
 )
 from memory import Memory
 
@@ -58,17 +58,17 @@ class TestDivide(unittest.TestCase):
 
 class TestModulo(unittest.TestCase):
     def test_basic(self):
-        self.assertEqual(modulo(10, 3), 1)
+        self.assertEqual(mod(10, 3), 1)
     def test_no_remainder(self):
-        self.assertEqual(modulo(10, 5), 0)
+        self.assertEqual(mod(10, 5), 0)
     def test_dividend_smaller(self):
-        self.assertEqual(modulo(2, 5), 2)
+        self.assertEqual(mod(2, 5), 2)
     def test_negative_dividend(self):
-        self.assertEqual(modulo(-7, 3), 2)
+        self.assertEqual(mod(-7, 3), 2)
     def test_floats(self):
-        self.assertAlmostEqual(modulo(5.5, 2), 1.5)
-    def test_modulo_by_zero_returns_none(self):
-        self.assertIsNone(modulo(10, 0))
+        self.assertAlmostEqual(mod(5.5, 2), 1.5)
+    def test_mod_by_zero_returns_none(self):
+        self.assertIsNone(mod(10, 0))
 
 class TestPower(unittest.TestCase):
     def test_integer(self):
@@ -158,6 +158,40 @@ class TestMemory(unittest.TestCase):
         self.mem.mclear()
         self.mem.madd(2)
         self.assertEqual(self.mem.mrecall(), 2)
+
+class TestSqrt(unittest.TestCase):
+    def test_perfect_square(self):
+        self.assertEqual(sqrt(16), 4)
+    def test_zero(self):
+        self.assertEqual(sqrt(0), 0)
+    def test_not_perfect_square(self):
+        self.assertAlmostEqual(sqrt(2), 1.41421356, places=7)
+    def test_fraction(self):
+        self.assertAlmostEqual(sqrt(2.25), 1.5)
+    def test_negative_returns_error_string(self):
+        # sqrt из отрицательного числа возвращает строку "Ошибка", а не бросает исключение
+        self.assertEqual(sqrt(-4), "Ошибка")
+
+class TestFloorValue(unittest.TestCase):
+    def test_positive_fraction(self):
+        self.assertEqual(floor_value(2.7), 2)
+    def test_negative_fraction(self):
+        # floor округляет вниз, то есть к -3, а не к -2
+        self.assertEqual(floor_value(-2.1), -3)
+    def test_integer(self):
+        self.assertEqual(floor_value(5), 5)
+    def test_zero(self):
+        self.assertEqual(floor_value(0), 0)
+
+class TestCeilValue(unittest.TestCase):
+    def test_positive_fraction(self):
+        self.assertEqual(ceil_value(2.1), 3)
+    def test_negative_fraction(self):
+        self.assertEqual(ceil_value(-2.7), -2)
+    def test_integer(self):
+        self.assertEqual(ceil_value(5), 5)
+    def test_zero(self):
+        self.assertEqual(ceil_value(0), 0)
 
 if __name__ == "__main__":
     unittest.main()
