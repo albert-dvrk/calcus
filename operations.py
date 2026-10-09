@@ -1,7 +1,16 @@
 import math
 
-#надо реализовать
-def modulo(a, b):
+def add(a, b):
+    return a + b
+def subtract(a, b):
+    return a - b
+def multiply(a, b):
+    return a * b
+def divide(a, b):
+    if b == 0:
+        return None
+    return a // b
+def mod(a, b):
     if b == 0:
         return None
     return a % b
@@ -11,30 +20,11 @@ def cos_deg(x):
     return math.cos(math.radians(x))
 def power(a, b):
     return a ** b
-def add(a, b):
-    return a + b
-def subtract(a, b):
-    return a - b
-def multiply(a, b):
-    return a * b
-def divide(a, b):
-    return a / b
-def square_root(x):print()
-def floor_value(x):print()
-def ceil_value(x):print()
-
-
-import math
-
-def square(x):
-    return x * x
-
-import math
-
 def sqrt(x):
     if x < 0:
         return "Ошибка"
     return math.sqrt(x)
-
-def percent(number, percent_value):
-    return (number * percent_value) / 100
+def floor_value(x):
+    return math.floor(x)
+def ceil_value(x):
+    return math.ceil(x)
